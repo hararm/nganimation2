@@ -31,6 +31,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class AppComponent {
   clickInfo = 'default';
+  paragraphClick = 'default';
+  numberEntred;
 
   onClick() {
     this.clickInfo = 'clicked';
