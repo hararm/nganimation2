@@ -26,6 +26,29 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
       transition('default => clicked', animate('1000ms 500ms ease-in')),
       transition('clicked => default', animate(300)),
       transition('mouseDown <=> clicked', animate(300))
+    ]),
+    trigger('numberEnteredState', [
+      state('unselected', style({
+        border: '1px solid black',
+        padding: '5px',
+        transform: 'scale(1)'
+      })),
+      state('selected', style({
+        border: '2px solid blue',
+        padding: '4px',
+        backgroundColor: 'lightblue',
+        transform: 'scale(1.5)'
+      })),
+      transition('unselected => selected', [
+        style({
+          border: '2px solid black',
+          padding: '4px'
+        }),
+        animate(2000, style({
+          backgroundColor: 'red'
+        })),
+        animate(2000)
+      ])
     ])
   ]
 })
